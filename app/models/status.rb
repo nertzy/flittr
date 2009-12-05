@@ -1,18 +1,18 @@
-class Status < BlankSlate
-  attr_reader :status
+class Status
+  attr_reader :id
   
-  # Fetch a TwitterStruct
   def initialize(id)
-    @status = Rails.cache.fetch("statuses/#{id}") { client.statuses.show?(:id => id.to_i) }
+    @id = id
+    @record = Rails.cache.fetch("statuses/#{id}") { client.statuses.show?(:id => id.to_i) }
   end
-
+  
   # Delegate everything to the TwitterStruct
   def method_missing(sym, *args)
-    @status.send(sym, *args)
+    @record.__send__(sym, *args) if @record.respond_to?(sym)
   end
   
   def url
-    "http://twitter.com/#{from_user}/status/#{id}"
+    "http://twitter.com/#{@record.user.screen_name}/status/#{@id}"
   end
   
   private

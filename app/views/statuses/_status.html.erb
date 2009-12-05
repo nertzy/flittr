@@ -1,9 +1,12 @@
-<div class="status" id="status-<%= @status.status.id %>">
+<div class="status" id="status-<%= @status.id %>">
   <div class="avatar">
     <a href="http://twitter.com/nertzy">
       <%= image_tag @status.user.profile_image_url, :alt => '' %>
-      <span class="from_user">
+      <span class="screen_name">
         <%= h @status.user.screen_name %>
+      </span>
+      <span class="name">
+        <%= h @status.user.name %>
       </span>
     </a>
   </div>
@@ -11,7 +14,12 @@
     <p class="text"><%= @status.text %></p>
     <p class="metadata">
       <%= link_to "#{time_ago_in_words(@status.created_at)} ago", @status.url %>
-      from <%= raw @status.source %>
+      <% if @status.source -%>
+        from <%= raw @status.source %>
+      <% end %>
+      <% if @status.in_reply_to_status_id %>
+        <%= link_to "in reply to #{@status.in_reply_to_screen_name}", status_path(@status.in_reply_to_status_id) %> 
+      <% end %>
     </p>
   </div>
 </div>
