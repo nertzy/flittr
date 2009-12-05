@@ -6,7 +6,7 @@
 # no regular words or you'll be exposed to dictionary attacks.
 ActionController::Base.session = {
   :key         => '_flittr_session',
-  :secret      => '8ba5710dcd358a66a6031b5e2d64287c97b5d54ec36ab2c1b849e4c5e7bda4cbf1bbf4fa96ba785d94c4ebd2229078d984e3855cce23aa985a71d513fc08dab5'
+  :secret      => 'aca95b5637b8d20f9163014183bc0d6c7ce4822d24b5b565cb0d1f0afb175c96d27352f62827d10a21bb5b9087621d8c54ffbfccb338fd016823e29a4bbf799f'
 }
 
 # Use the database for sessions instead of the cookie-based default,
