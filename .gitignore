@@ -3,3 +3,6 @@ log/*.log
 tmp/**/*
 config/database.yml
 db/*.sqlite3
+bin/*
+vendor/gems/*
+!vendor/gems/cache/
