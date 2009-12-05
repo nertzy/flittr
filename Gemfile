@@ -10,6 +10,6 @@ gem "mysql"
 gem "grackle"
 gem "alexrabarts-term_extraction"
 
-only :test do
-  gem "ZenTest"
-end
+gem 'ruby-debug', :except => 'production'
+
+gem "ZenTest", :only => 'test'
