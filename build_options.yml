@@ -1,0 +1,2 @@
+mysql:
+  mysql-dir: /usr/local/mysql
