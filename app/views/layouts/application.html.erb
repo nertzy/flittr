@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flittr</title>
+    <%= stylesheet_link_tag 'application' %>
+    <% body_style = yield(:body_style) %>
+    <% if body_style -%>
+      <style type="text/css" media="screen">
+        body{
+          <%= raw body_style %>
+        }
+      </style>
+    <% end %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>

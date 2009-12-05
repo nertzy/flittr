@@ -1,0 +1,17 @@
+<div class="status" id="status-<%= @status.status.id %>">
+  <div class="avatar">
+    <a href="http://twitter.com/nertzy">
+      <%= image_tag @status.user.profile_image_url, :alt => '' %>
+      <span class="from_user">
+        <%= h @status.user.screen_name %>
+      </span>
+    </a>
+  </div>
+  <div class="content">
+    <p class="text"><%= @status.text %></p>
+    <p class="metadata">
+      <%= link_to "#{time_ago_in_words(@status.created_at)} ago", @status.url %>
+      from <%= raw @status.source %>
+    </p>
+  </div>
+</div>

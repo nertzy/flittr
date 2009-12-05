@@ -1,0 +1,88 @@
+body{
+  font-family:"Myriad Pro", "Lucida Grande", Verdana, Helvetica, sans-serif;
+  font-size:62.5%;
+/*  background: -webkit-gradient(linear, left top, left bottom, from(#eff), to(#00abeb));
+  background-attachment: fixed;
+  background-color: #A3D9F4;
+*/}
+
+h1{
+  font-size:3.6em;
+  text-align:center;
+}
+
+#status_wrapper{
+  height:100%;
+}
+
+div.status{
+/*  height:100px;*/
+  margin:20px auto;
+  width:600px;
+  padding:20px;
+  border:1px solid #cc0;
+  list-style: none;
+  overflow:hidden;
+  border-radius:1em;
+  -webkit-border-radius:1em;
+  -moz-border-radius:1em;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffc), to(#fff));
+  background-color: #ffffe8;
+}
+
+div.status div.avatar{
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ffffe8));
+  background-color: #fffff8;
+  border:1px solid #ee8;
+  float:left;
+  width:100px;
+  text-align:center;
+  font-size:1.2em;
+  border-radius:1em;
+  -webkit-border-radius:1em;
+  -moz-border-radius:1em;
+}
+
+div.status div.avatar a{
+  display:block;
+  padding:10px;
+  text-decoration:none;
+}
+
+div.status div.avatar a:hover{
+  text-decoration:underline;
+}
+
+div.status div.avatar img{
+  display:block;
+  margin:0 auto 10px;
+  border:0;
+  max-width:48px;
+  max-height:48px;
+}
+
+div.status div.avatar span.from_user{
+  display:block;
+  margin:0;
+}
+
+
+div.status div.content{
+  padding-left:140px;
+}
+
+div.status div.content p.text{
+  font-size:1.6em;
+}
+
+div.status div.content p.metadata{
+  font-size:1.2em;
+}
+
+#footer{
+  width:600px;
+  margin:0 auto;
+}

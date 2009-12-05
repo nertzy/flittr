@@ -1,0 +1,13 @@
+<% content_for :body_style do -%>
+  background-image: url(<%= @status.user.profile_background_image_url %>);
+  background-repeat: <%= @status.user.profile_background_tile ? 'repeat' : 'no-repeat' %>;
+  background-color: #<%= @status.user.profile_background_color %>;
+<% end -%>
+
+
+<div id="status_wrapper" style=>
+  &nbsp;
+  <%= render :partial => 'status' %>
+</div>
+
+<%= raw debug(@status) %>
