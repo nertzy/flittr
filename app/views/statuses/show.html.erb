@@ -4,10 +4,8 @@
   background-color: #<%= @status.user.profile_background_color %>;
 <% end -%>
 
+<%= render :partial => 'status' %>
 
-<div id="status_wrapper">
-  &nbsp;
-  <%= render :partial => 'status' %>
-</div>
+<%= raw debug(@status.terms) %>
 
 <%= raw debug(@status) %>

@@ -10,6 +10,7 @@ gem "memcache-client"
 gem "erubis"
 gem "mysql"
 gem "grackle"
+gem "addressable"
 gem "alexrabarts-term_extraction"
 
 gem 'ruby-debug', :except => 'production'
