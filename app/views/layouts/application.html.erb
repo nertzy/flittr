@@ -4,6 +4,7 @@
     <title><%= @page_title ? "#{@page_title} | Flittr" : 'Flittr' %></title>
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag 'prototype' %>
+    <script src="http://nertzy.com/mint/?js" type="text/javascript"></script>
     <% body_style = yield(:body_style) %>
     <% if body_style -%>
       <!-- Commented out until Twitter fixes their API -->
