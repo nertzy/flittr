@@ -1,10 +1,14 @@
 require 'term_extraction'
+require_dependency 'photo'
 
 class Status
   attr_reader :id
   
-  def initialize(id)
-    @id = id
+  def initialize(options = {})
+    @record ||= options[:record]
+    @user ||= options[:user]
+    @id = @record ? @record.id : options[:id]
+    raise ArgumentError("id not given") unless @id
   end
   
   # Lazy load the Twitter record
@@ -21,8 +25,12 @@ class Status
     end
   end
   
+  def user
+    @user ||= User.new(:record => record.user)
+  end
+  
   def url
-    "http://twitter.com/#{record.user.screen_name}/status/#{@id}"
+    "http://twitter.com/#{user.screen_name}/status/#{@id}"
   end
   
   def terms
@@ -30,18 +38,20 @@ class Status
   end
 
   def photo
-    # Rails.cache.fetch("#{cache_key}/photo") do
+    Rails.cache.fetch("#{cache_key}/photo") do
       Photo.find_or_create_by_twitter_status_id(@id) do |photo|
         photo.fleakr = flickr_photo
+        photo.save!
       end
-    # end
+    end
   end
   
   def flickr_photo
-    Rails.cache.fetch("#{cache_key}/flickr_photo") do
+    Rails.cache.fetch("#{cache_key}/flickr_photo", :raw => true) do
       query = terms.join(' ')
-      Fleakr.search(query.blank? ? 'nertzy' : query).rand
-    end.dup
+      photo = Fleakr.search(query.blank? ? 'lolcats' : query).rand
+      photo || Fleakr.search('lolcats').rand
+    end
   end
   
   def cache_key

@@ -1,0 +1,7 @@
+<%= render @user.statuses %>
+
+<% if Rails.env.development? -%>
+  <%= raw debug @user %>
+  <%= raw debug @user.statuses.first %>
+  <%= raw debug @user.record %>
+<% end -%>

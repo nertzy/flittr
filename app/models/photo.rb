@@ -24,6 +24,7 @@ class Photo < ActiveRecord::Base
   validates_uniqueness_of :twitter_status_id
   
   def fleakr=(fleakr_photo)
+    fleakr_photo = fleakr_photo.dup
     self.flickr_id     = fleakr_photo.id
     self.title         = fleakr_photo.title
     self.description   = fleakr_photo.description
