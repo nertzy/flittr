@@ -28,16 +28,19 @@ class Status
   def terms
     term_extraction.terms
   end
+
+  def photo
+    # Rails.cache.fetch("#{cache_key}/photo") do
+      Photo.find_or_create_by_twitter_status_id(@id) do |photo|
+        photo.fleakr = flickr_photo
+      end
+    # end
+  end
   
   def flickr_photo
     Rails.cache.fetch("#{cache_key}/flickr_photo") do
       query = terms.join(' ')
-      photos = if query.blank?
-        Fleakr.photos.getRecent
-      else
-        Fleakr.search(query)
-      end
-      photos.rand
+      Fleakr.search(query.blank? ? 'nertzy' : query).rand
     end.dup
   end
   

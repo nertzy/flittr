@@ -24,9 +24,9 @@
     </p>
   </div>
 
-  <% if @status.flickr_photo -%>
+  <% if @status.photo -%>
     <div class="photo">
-      <%= link_to image_tag(@status.flickr_photo.medium.url), @status.flickr_photo.url %>
+      <%= link_to image_tag(@status.photo.medium_url), @status.photo.url %>
     </div>
   <% end -%>
   

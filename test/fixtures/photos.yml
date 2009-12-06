@@ -1,0 +1,42 @@
+# == Schema Information
+# Schema version: 20091206035924
+#
+# Table name: photos
+#
+#  id                :integer(4)      not null, primary key
+#  twitter_status_id :integer(8)
+#  medium_url        :string(255)
+#  small_url         :string(255)
+#  square_url        :string(255)
+#  thumbnail_url     :string(255)
+#  flickr_id         :integer(8)
+#  title             :string(255)
+#  description       :string(255)
+#  url               :string(255)
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  twitter_status_id: 1
+  medium_url: MyString
+  small_url: MyString
+  square_url: MyString
+  thumbnail_url: MyString
+  flickr_id: 1
+  title: MyString
+  description: MyString
+  url: MyString
+
+two:
+  twitter_status_id: 1
+  medium_url: MyString
+  small_url: MyString
+  square_url: MyString
+  thumbnail_url: MyString
+  flickr_id: 1
+  title: MyString
+  description: MyString
+  url: MyString
