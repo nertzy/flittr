@@ -12,6 +12,9 @@ gem "mysql"
 gem "grackle"
 gem "addressable"
 gem "alexrabarts-term_extraction"
+# gem "flickr-fu"
+# gem "flickraw", '0.7.1', :git => 'git://github.com/hanklords/flickraw.git'
+gem "fleakr"
 
 gem 'ruby-debug', :except => 'production'
 
