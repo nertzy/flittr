@@ -3,6 +3,7 @@
 <div class="copy">
   <p>Welcome to Flittr! Flittr looks at publicly available Twitter statuses and tries to guess a good Flickr picture for it. This picture will permanently be associated with the status.</p>
   <p>Right now, if it can't make a good guess, it will show you a lolcat instead.</p>
+  <p>It's slow due to the number of external API calls it makes, so expect to wait about a minute on the first load. After your page is generated, it will load much more quickly.</p>
   <% form_tag(search_path, {:class => 'search', :id => 'welcome_search_form'}) do -%>
     <label>@<%= text_field_tag :screen_name, params[:screen_name] %></label>
     <button type="submit">Look up by Twitter name</button>
