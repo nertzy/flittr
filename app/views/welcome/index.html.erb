@@ -1,3 +1,14 @@
 <h1>Flittr</h1>
 
-<p>Welcome to Flittr!</p>
+<div class="copy">
+  <p>Welcome to Flittr! Flittr looks at publicly available Twitter statuses and tries to guess a good Flickr picture for it. This picture will permanently be associated with the status.</p>
+  <p>Right now, if it can't make a good guess, it will show you a lolcat instead.</p>
+  <% form_tag(search_path, {:class => 'search', :id => 'welcome_search_form'}) do -%>
+    <label>@<%= text_field_tag :screen_name, params[:screen_name] %></label>
+    <button type="submit">Look up by Twitter name</button>
+    <% if flash[:search_form_message] -%>
+      <p class="message"><%= flash[:search_form_message] %></p>
+    <% end -%>
+  <% end -%>
+  <%= update_page_tag {|page| page['welcome_search_form'].focusFirstElement } %>
+</div>

@@ -4,6 +4,8 @@ body{
   background: -webkit-gradient(linear, left top, left bottom, from(#eff), to(#00abeb));
   background-attachment: fixed;
   background-color: #A3D9F4;
+  padding:0;
+  margin:0;
 }
 
 h1{
@@ -44,7 +46,8 @@ div.status div.avatar a{
   text-decoration:none;
 }
 
-div.status div.avatar a:hover{
+div.status div.avatar a:hover span.screen_name{
+  color:red;
   text-decoration:underline;
 }
 
@@ -72,7 +75,7 @@ div.status div.content{
   padding-left:200px;
 }
 
-div.status div.content p.text{
+div.status div.content div.text p{
   font-size:1.6em;
 }
 
@@ -94,7 +97,81 @@ div.status div.photo a img{
   -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
 }
 
-#footer{
-  width:600px;
+div.status div.permalink{
+  text-align:center;
+  margin-top:20px;
+
+}
+
+#header{
+  background:#888;
+  background:rgba(0,0,0,0.5);
+  color:#fff;
+  margin:0 0 20px;
+  padding:5px 20px;
+  font-size:2.0em;
+  overflow:hidden;
+}
+#header p.tagline{
+  float:right;
+}
+#header p.home_link a{
+  display:block;
+  float:left;
+  text-decoration:none;
+  color:#fff;
+  border: 1px solid #333;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  background:#333;
+  background:rgba(0,0,0,0.5);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.7)), to(rgba(0,0,0,0.3)));
+  padding:3px 10px;
+}
+#header p.home_link a:hover{
+  background:#000;
+  background:rgba(0,0,0,0.8);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.6)));
+}
+
+div.copy{
+  width:640px;
   margin:0 auto;
+}
+div.copy p{
+  font-size:1.6em;
+}
+
+form.search{
+  text-align:center;
+  font-size:2.0em;
+}
+form.search input{
+  font-size:1.0em;
+  width:300px;
+}
+form.search button{
+  background:rgba(255,255,255,0.3);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.5)), to(rgba(255,255,255,0.1)));
+  font-size:1.0em;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+}
+form.search button:hover{
+  background:rgba(255,255,255,0.5);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.7)), to(rgba(255,255,255,0.3)));
+}
+form.search p.message{
+  background:#ffc;
+  background:rgba(255,255,128,0.9);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,128,1)), to(rgba(255,255,128,0.3)));
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  font-size:0.9em;
+  padding:5px 10px;
+}
+
+#footer{
+  font-size:1.2em;
+  text-align:center;
 }

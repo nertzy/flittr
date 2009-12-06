@@ -3,6 +3,7 @@
   <head>
     <title>Flittr</title>
     <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'prototype' %>
     <% body_style = yield(:body_style) %>
     <% if body_style -%>
       <!-- Commented out until Twitter fixes their API -->
@@ -16,6 +17,25 @@
     <% end %>
   </head>
   <body>
-    <%= yield %>
+    <div id="header">
+      <p class="tagline">Flickr + Twitter = Flittr</p>
+      <p class="home_link"><%= link_to 'Home', root_path %></p>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+    <div id="footer">
+      <p>&copy; 2009 Grant Hutchins | <%= link_to 'nertzy.com', 'http://nertzy.com' %> | <%= link_to '@nertzy', 'http://twitter.com/nertzy' %></p>
+    </div>
+    
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker("UA-278947-9");
+    pageTracker._trackPageview();
+    } catch(err) {}</script>
   </body>
 </html>

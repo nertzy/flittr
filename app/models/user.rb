@@ -4,11 +4,11 @@ class User
   def initialize(options = {})
     @record ||= options[:record]
     if @record
-      @name = record.screen_name
+      @screen_name = record.screen_name
     else
-      @name = options[:name]
+      @screen_name = options[:screen_name]
     end
-    raise ArgumentError.new("Name not given") unless @name
+    raise ArgumentError.new("Screen name not given") unless @screen_name
   end
 
   # Delegate everything to the TwitterStruct
@@ -18,7 +18,7 @@ class User
 
   def statuses
     @statuses ||= Rails.cache.fetch("#{cache_key}/statuses", :expires_in => 10.minutes) do
-      twitter_client.statuses.user_timeline?(:screen_name => name).map do |status_record|
+      twitter_client.statuses.user_timeline?(:screen_name => screen_name).map do |status_record|
         Status.new(:record => status_record, :user => self)
       end
     end
@@ -26,16 +26,16 @@ class User
 
   def record
     @record ||= Rails.cache.fetch("#{cache_key}/record", :expires_in => 10.minutes) do
-      twitter_client.users.show? :screen_name => name
+      twitter_client.users.show? :screen_name => screen_name
     end
   end
   
-  def name
-    @name ||= record.screen_name
+  def screen_name
+    @screen_name ||= record.screen_name
   end
   
   def cache_key
-    "users/#{name}"
+    "users/#{screen_name}"
   end
 
   private

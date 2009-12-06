@@ -40,8 +40,7 @@ class Status
   def photo
     Rails.cache.fetch("#{cache_key}/photo") do
       Photo.find_or_create_by_twitter_status_id(@id) do |photo|
-        photo.fleakr = flickr_photo
-        photo.save!
+        photo.fleakr = flickr_photo if photo.new_record?
       end
     end
   end
