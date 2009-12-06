@@ -6,8 +6,9 @@
 
 <%= render :partial => 'status' %>
 
-<%= raw debug(@status.terms) %>
-
-<%= raw debug(@status.flickr_photo) %>
-
-<%= raw debug(@status) %>
+<% if Rails.env.development? -%>
+  <%= raw debug(@status.terms) %>
+  <%= raw debug(@status.photo) %>
+  <%= raw debug(@status.flickr_photo) %>
+  <%= raw debug(@status) %>
+<% end -%>
