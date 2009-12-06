@@ -30,10 +30,6 @@ class Status
     @user ||= User.new(:record => record.user)
   end
   
-  def url
-    "http://twitter.com/#{user.screen_name}/status/#{@id}"
-  end
-  
   def terms
     term_extraction.terms
   end
@@ -49,8 +45,10 @@ class Status
   def flickr_photo
     Rails.cache.fetch("#{cache_key}/flickr_photo", :raw => true) do
       query = terms.join(' ')
-      photo = Fleakr.search(query.blank? ? 'lolcats' : query).rand
-      photo || Fleakr.search('lolcats').rand
+      photos = Fleakr.search(query.blank? ? 'lolcats' : query)
+      photos = Fleakr.search(terms.first) if photos.empty? && terms.length > 1
+      photos = Fleakr.search('lolcats') if photos.empty?
+      photos.rand
     end
   end
   
@@ -64,10 +62,6 @@ class Status
     @@twitter_client ||= Grackle::Client.new
   end
   
-  # def flickr_client
-  #   @@flickr_client ||= Flickr.new(File.join(Rails.root, 'config', 'flickr.yml'))
-  # end
-
   def term_extraction
     Rails.cache.fetch("statuses/#{id}/term_extraction") do
       TermExtraction::Yahoo.new(:api_key => 'KEY_GOES_HERE', :context => self.text)

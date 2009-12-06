@@ -32,7 +32,11 @@ class User
   end
   
   def screen_name
-    @screen_name ||= record.screen_name
+    @screen_name ||= formatted_screen_name
+  end
+  
+  def formatted_screen_name
+    record.screen_name
   end
   
   def cache_key

@@ -1,5 +1,5 @@
-<% @page_title = "@#{@user.screen_name}" %>
-<h1>@<%= @user.screen_name %></h1>
+<% @page_title = "@#{@user.formatted_screen_name}" %>
+<h1>@<%= @user.formatted_screen_name %></h1>
 <%= render @user.statuses %>
 
 <% if Rails.env.development? -%>
