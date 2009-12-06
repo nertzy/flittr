@@ -1,4 +1,5 @@
 class StatusesController < ApplicationController
+  caches_page :show
   caches_action :show, :expires_in => 2.days
   def show
     expires_in 2.days, :public => true
