@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flittr</title>
+    <title><%= @page_title ? "#{@page_title} | Flittr" : 'Flittr' %></title>
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag 'prototype' %>
     <% body_style = yield(:body_style) %>

@@ -1,3 +1,5 @@
+<% @page_title = "@#{@status.user.screen_name} | #{truncate(@status.text, :length => 40)}" %>
+
 <% content_for :body_style do -%>
   background-image: url(<%= @status.user.profile_background_image_url %>);
   background-repeat: <%= @status.user.profile_background_tile ? 'repeat' : 'no-repeat' %>;
