@@ -9,7 +9,7 @@ class User
       @screen_name = options[:screen_name]
     end
     raise ArgumentError.new("Screen name not given") unless @screen_name
-    record
+    raise NotAuthorized if record.protected
   end
 
   # Delegate everything to the TwitterStruct
@@ -48,5 +48,7 @@ class User
   def twitter_client
     @@twitter_client ||= Grackle::Client.new
   end
+
+  class NotAuthorized < StandardError; end
 
 end

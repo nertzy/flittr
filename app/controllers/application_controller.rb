@@ -7,8 +7,18 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+
+  rescue_from Grackle::TwitterError, :with => :twitter_error
+  rescue_from User::NotAuthorized, :with => :not_authorized
   
-  rescue_from Grackle::TwitterError do |exception|
+  private
+  
+  def twitter_error
     render '/error/twitter', :layout => 'application', :status => 500
   end
+
+  def not_authorized
+    render '/error/not_authorized', :layout => 'application', :status => 500
+  end
+  
 end
