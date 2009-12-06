@@ -3,8 +3,12 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  # protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  rescue_from Grackle::TwitterError do |exception|
+    render '/error/twitter', :layout => 'application', :status => 500
+  end
 end

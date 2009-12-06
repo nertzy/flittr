@@ -9,6 +9,7 @@ class User
       @screen_name = options[:screen_name]
     end
     raise ArgumentError.new("Screen name not given") unless @screen_name
+    record
   end
 
   # Delegate everything to the TwitterStruct

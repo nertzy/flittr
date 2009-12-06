@@ -9,6 +9,7 @@ class Status
     @user ||= options[:user]
     @id = @record ? @record.id : options[:id]
     raise ArgumentError("id not given") unless @id
+    record
   end
   
   # Lazy load the Twitter record
