@@ -29,6 +29,9 @@ after 'deploy:update_code' do
   %w{database.yml}.each do |path|
     run "ln -nfs #{shared_path}/#{path} #{release_path}/config/#{path}"
   end
+  %w{fleakr.rb yahoo.rb}.each do |path|
+    run "ln -nfs #{shared_path}/#{path} #{release_path}/config/initializers/#{path}"
+  end
   %w{environment.rb gems specifications doc}.each do |path|
     run "ln -nfs #{shared_path}/bundler_gems/#{path} #{release_path}/vendor/bundler_gems/#{path}"
   end

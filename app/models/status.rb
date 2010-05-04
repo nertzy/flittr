@@ -64,7 +64,7 @@ class Status
   
   def term_extraction
     Rails.cache.fetch("statuses/#{id}/term_extraction") do
-      TermExtraction::Yahoo.new(:api_key => 'KEY_GOES_HERE', :context => self.text)
+      TermExtraction::Yahoo.new(:api_key => Yahoo::API_KEY, :context => self.text)
     end
   end
   

@@ -1,0 +1,4 @@
+# Yahoo API key
+module Yahoo
+  API_KEY = ''.freeze
+end

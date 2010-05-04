@@ -1,0 +1,3 @@
+# Flickr API crendentials
+Fleakr.api_key = ''.freeze
+Fleakr.shared_secret = ''.freeze
