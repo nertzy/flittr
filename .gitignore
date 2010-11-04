@@ -7,6 +7,4 @@ config/initializers/fleakr.rb
 config/initializers/yahoo.rb
 db/*.sqlite3
 bin/*
-vendor/bundler_gems/*
-!vendor/bundler_gems/cache/
 public/statuses/*
