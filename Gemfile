@@ -15,3 +15,7 @@ group :test do
   gem "ruby-debug"
   gem "ZenTest"
 end
+
+group :development do
+  gem "heroku"
+end

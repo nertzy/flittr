@@ -17,6 +17,7 @@ GEM
     activesupport (2.3.5)
     addressable (2.2.2)
     columnize (0.3.1)
+    configuration (1.2.0)
     crack (0.1.8)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -28,8 +29,15 @@ GEM
       json
       mime-types
       oauth
+    heroku (1.17.10)
+      json (~> 1.4.6)
+      launchy (~> 0.3.2)
+      rest-client (>= 1.4.0, < 1.7.0)
     hpricot (0.8.2)
     json (1.4.6)
+    launchy (0.3.7)
+      configuration (>= 0.0.5)
+      rake (>= 0.8.1)
     linecache (0.43)
     loggable (0.3.0)
     memcache-client (1.8.5)
@@ -45,6 +53,8 @@ GEM
       activesupport (= 2.3.5)
       rake (>= 0.8.3)
     rake (0.8.7)
+    rest-client (1.6.1)
+      mime-types (>= 1.16)
     ruby-debug (0.10.3)
       columnize (>= 0.1)
       ruby-debug-base (~> 0.10.3.0)
@@ -64,6 +74,7 @@ DEPENDENCIES
   erubis
   fleakr
   grackle
+  heroku
   memcache-client
   pg
   rails (= 2.3.5)
