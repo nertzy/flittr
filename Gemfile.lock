@@ -18,7 +18,6 @@ GEM
     addressable (2.2.2)
     columnize (0.3.1)
     configuration (1.2.0)
-    crack (0.1.8)
     dalli (1.0.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -42,6 +41,7 @@ GEM
     linecache (0.43)
     loggable (0.3.0)
     mime-types (1.16)
+    nokogiri (1.4.4)
     oauth (0.4.4)
     pg (0.10.1)
     rack (1.0.1)
@@ -61,8 +61,8 @@ GEM
     ruby-debug-base (0.10.3)
       linecache (>= 0.3)
     system_timer (1.0)
-    term_extraction (0.1.7)
-      crack (>= 0.1.6)
+    term_extraction (0.1.4)
+      nokogiri (>= 1.0.7)
 
 PLATFORMS
   ruby
@@ -73,11 +73,11 @@ DEPENDENCIES
   addressable
   dalli
   erubis
-  fleakr
+  fleakr (= 0.6.3)
   grackle
   heroku
   pg
   rails (= 2.3.5)
   ruby-debug
   system_timer
-  term_extraction
+  term_extraction (= 0.1.4)

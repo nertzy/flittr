@@ -8,8 +8,8 @@ gem "erubis"
 gem "pg"
 gem "grackle"
 gem "addressable"
-gem "term_extraction"
-gem "fleakr"
+gem "term_extraction", "0.1.4"
+gem "fleakr", "0.6.3"
 
 group :test do
   gem "ruby-debug"
