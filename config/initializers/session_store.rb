@@ -1,7 +1,8 @@
-ActionController::Base.session = {
-  :namespace   => '_dalli-rails2_session',
-  :secret => 'a9d5b3645da8e334cef0decf5fbf9537a31abf6818852f158a97e7b224fd8c812454d026623a6f5cc90dac28c856a91efca0ce02f91e7e29a62eee7a2a021514'
-}
+# Be sure to restart your server when you modify this file.
 
-require 'action_controller/session/dalli_store'
-ActionController::Base.session_store = :dalli_store
+Flittr::Application.config.session_store :cookie_store, :key => '_flittr_session'
+
+# Use the database for sessions instead of the cookie-based default,
+# which shouldn't be used to store highly confidential information
+# (create the session table with "rails generate session_migration")
+# Flittr::Application.config.session_store :active_record_store

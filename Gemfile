@@ -1,15 +1,13 @@
 source :rubygems
 
-gem "rails", "2.3.5"
+gem "rails", "3.0.4"
 gem "dalli"
 gem "system_timer"
-gem "RubyInline"
-gem "erubis"
 gem "pg"
 gem "grackle"
 gem "addressable"
 gem "term_extraction", "0.1.4"
-gem "fleakr", "0.6.3"
+gem "fleakr"
 
 group :test do
   gem "ruby-debug"

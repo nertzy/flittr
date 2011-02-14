@@ -6,7 +6,7 @@
   background-color: #<%= @status.user.profile_background_color %>;
 <% end -%>
 
-<%= render @status %>
+<%= render :partial => "statuses/status", :object => @status %>
 
 <% if Rails.env.development? -%>
   <%= raw debug(@status.terms) %>

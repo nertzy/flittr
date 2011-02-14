@@ -1,6 +1,8 @@
-.DS_Store
+.bundle
+db/*.sqlite3
 log/*.log
-tmp/**/*
+tmp/
+.DS_Store
 tmp/restart.txt
 config/database.yml
 config/initializers/fleakr.rb

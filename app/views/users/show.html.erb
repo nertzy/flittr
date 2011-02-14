@@ -1,9 +1,3 @@
 <% @page_title = "@#{@user.formatted_screen_name}" %>
 <h1>@<%= @user.formatted_screen_name %></h1>
-<%= render @user.statuses %>
-
-<% if Rails.env.development? -%>
-  <%= raw debug @user %>
-  <%= raw debug @user.statuses.first %>
-  <%= raw debug @user.record %>
-<% end -%>
+<%= render :partial => "statuses/status", :collection => @user.statuses %>
