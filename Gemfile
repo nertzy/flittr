@@ -1,15 +1,14 @@
-source "http://gemcutter.org"
-source "http://gems.github.com"
+source :rubygems
 
 gem "rails", "2.3.5"
 gem "memcache-client"
 gem "system_timer"
 gem "RubyInline"
 gem "erubis"
-gem "mysql"
+gem "pg"
 gem "grackle"
 gem "addressable"
-gem "alexrabarts-term_extraction"
+gem "term_extraction"
 gem "fleakr"
 
 group :test do

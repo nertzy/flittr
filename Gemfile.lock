@@ -1,6 +1,5 @@
 GEM
-  remote: http://gemcutter.org/
-  remote: http://gems.github.com/
+  remote: http://rubygems.org/
   specs:
     RubyInline (3.8.6)
       ZenTest (~> 4.3)
@@ -17,9 +16,8 @@ GEM
       activesupport (= 2.3.5)
     activesupport (2.3.5)
     addressable (2.2.2)
-    alexrabarts-term_extraction (0.1.4)
-      nokogiri (>= 1.0.7)
     columnize (0.3.1)
+    crack (0.1.8)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     fleakr (0.6.3)
@@ -36,9 +34,8 @@ GEM
     loggable (0.3.0)
     memcache-client (1.8.5)
     mime-types (1.16)
-    mysql (2.8.1)
-    nokogiri (1.4.3.1)
     oauth (0.4.4)
+    pg (0.10.1)
     rack (1.0.1)
     rails (2.3.5)
       actionmailer (= 2.3.5)
@@ -54,6 +51,8 @@ GEM
     ruby-debug-base (0.10.3)
       linecache (>= 0.3)
     system_timer (1.0)
+    term_extraction (0.1.7)
+      crack (>= 0.1.6)
 
 PLATFORMS
   ruby
@@ -62,12 +61,12 @@ DEPENDENCIES
   RubyInline
   ZenTest
   addressable
-  alexrabarts-term_extraction
   erubis
   fleakr
   grackle
   memcache-client
-  mysql
+  pg
   rails (= 2.3.5)
   ruby-debug
   system_timer
+  term_extraction

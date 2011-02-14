@@ -44,7 +44,7 @@ class Status
   
   def flickr_photo
     Rails.cache.fetch("#{cache_key}/flickr_photo", :raw => true) do
-      query = terms.join(' ')
+      query = terms
       photos = Fleakr.search(query.blank? ? 'lolcats' : query)
       photos = Fleakr.search(terms.first) if photos.empty? && terms.length > 1
       photos = Fleakr.search('lolcats') if photos.empty?
