@@ -19,6 +19,7 @@ GEM
     columnize (0.3.1)
     configuration (1.2.0)
     crack (0.1.8)
+    dalli (1.0.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     fleakr (0.6.3)
@@ -40,7 +41,6 @@ GEM
       rake (>= 0.8.1)
     linecache (0.43)
     loggable (0.3.0)
-    memcache-client (1.8.5)
     mime-types (1.16)
     oauth (0.4.4)
     pg (0.10.1)
@@ -71,11 +71,11 @@ DEPENDENCIES
   RubyInline
   ZenTest
   addressable
+  dalli
   erubis
   fleakr
   grackle
   heroku
-  memcache-client
   pg
   rails (= 2.3.5)
   ruby-debug
