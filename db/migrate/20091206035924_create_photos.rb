@@ -8,7 +8,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.string :thumbnail_url
       t.column :flickr_id, "bigint"
       t.string :title
-      t.string :description
+      t.text :description
       t.string :url
 
       t.timestamps

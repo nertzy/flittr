@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20091206070943) do
     t.string   "thumbnail_url"
     t.integer  "flickr_id",         :limit => 8
     t.string   "title"
-    t.string   "description"
+    t.text     "description"
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
