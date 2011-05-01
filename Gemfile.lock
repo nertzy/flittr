@@ -45,15 +45,14 @@ GEM
       json
       mime-types
       oauth
-    heroku (1.16.2)
-      json_pure (>= 1.2.0, < 1.5.0)
-      launchy (~> 0.3.2)
-      rest-client (>= 1.4.0, < 1.7.0)
+    heroku (2.0.4)
+      launchy (>= 0.3.2)
+      rest-client (< 1.7.0, >= 1.4.0)
+      term-ansicolor (~> 1.0.5)
     hpricot (0.8.4)
     i18n (0.5.0)
     json (1.5.1)
-    json_pure (1.4.6)
-    launchy (0.3.7)
+    launchy (0.4.0)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
     loggable (0.3.0)
@@ -93,6 +92,7 @@ GEM
     rake (0.8.7)
     rest-client (1.6.1)
       mime-types (>= 1.16)
+    term-ansicolor (1.0.5)
     term_extraction (0.1.4)
       nokogiri (>= 1.0.7)
     thor (0.14.6)
