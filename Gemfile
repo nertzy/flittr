@@ -1,6 +1,6 @@
 source :rubygems
 
-gem "rails", "~> 3.1"
+gem "rails", "~> 3.2.0"
 
 gem 'thin'
 
