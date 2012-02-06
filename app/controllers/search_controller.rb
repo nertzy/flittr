@@ -1,5 +1,4 @@
 class SearchController < ApplicationController
-  verify :method => :post
   def index
     if params[:screen_name].blank?
       flash[:search_form_message] = 'Please enter a Twitter handle'
