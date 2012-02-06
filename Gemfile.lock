@@ -63,6 +63,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     multi_json (1.0.4)
+    newrelic_rpm (3.3.1)
     nokogiri (1.4.4)
     oauth (0.4.4)
     passenger (3.0.7)
@@ -128,6 +129,7 @@ DEPENDENCIES
   fleakr
   grackle
   heroku
+  newrelic_rpm
   passenger
   pg
   rails (~> 3.2.0)

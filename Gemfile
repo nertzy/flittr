@@ -12,6 +12,8 @@ gem "addressable"
 gem "term_extraction", "0.1.4"
 gem "fleakr"
 
+gem 'newrelic_rpm'
+
 group :test do
   gem "ZenTest"
 end
