@@ -6,7 +6,7 @@
   <p>Right now, if it can't make a good guess, it will show you a lolcat instead.</p>
   <p>It's slow due to the number of external API calls it makes, so expect to wait about a minute on the first load. After your page is generated, it will load much more quickly.</p>
   <%= form_tag(search_path, {:class => 'search', :id => 'welcome_search_form'}) do -%>
-    <label>@<%= text_field_tag :screen_name, params[:screen_name] %></label>
+    <label>@<%= text_field_tag :screen_name, params[:screen_name], :autofocus => 'autofocus' %></label>
     <button type="submit">Look up by Twitter name</button>
     <% if flash[:search_form_message] -%>
       <p class="message"><%= flash[:search_form_message] %></p>
