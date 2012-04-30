@@ -21,5 +21,6 @@ end
 group :development do
   gem "heroku"
   gem "passenger"
+  gem "guard"
 end
 

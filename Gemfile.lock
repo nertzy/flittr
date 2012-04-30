@@ -38,6 +38,7 @@ GEM
     erubis (2.7.0)
     eventmachine (0.12.10)
     fastthread (1.0.7)
+    ffi (1.0.11)
     fleakr (0.7.1)
       hpricot (>= 0.6.164)
       loggable (>= 0.2.0)
@@ -45,6 +46,9 @@ GEM
       json
       mime-types
       oauth
+    guard (1.0.1)
+      ffi (>= 0.5.0)
+      thor (~> 0.14.6)
     heroku (2.19.2)
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
@@ -128,6 +132,7 @@ DEPENDENCIES
   dalli
   fleakr
   grackle
+  guard
   heroku
   newrelic_rpm
   passenger
