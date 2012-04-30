@@ -19,6 +19,7 @@ group :development do
   gem "guard-spin"
   gem "guard-bundler"
   gem "guard-rails"
+  gem "guard-livereload"
 end
 
 group :test, :development do
