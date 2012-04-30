@@ -17,3 +17,7 @@ guard 'spin' do
   # Capybara request specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
 end
+
+guard 'bundler' do
+  watch('Gemfile')
+end
