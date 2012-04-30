@@ -24,3 +24,6 @@ group :development do
   gem "guard"
 end
 
+group :test, :development do
+  gem "rspec-rails"
+end
