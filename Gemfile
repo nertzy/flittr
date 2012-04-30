@@ -20,6 +20,7 @@ group :development do
   gem "guard-bundler"
   gem "guard-rails"
   gem "guard-livereload"
+  gem "rack-livereload"
 end
 
 group :test, :development do
