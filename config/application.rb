@@ -40,3 +40,7 @@ module Flittr
     config.filter_parameters += [:password]
   end
 end
+
+# Fake slow
+print "Loading"
+10.times { sleep 1; print "." }
