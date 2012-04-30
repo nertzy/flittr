@@ -14,6 +14,8 @@ gem "fleakr"
 
 gem "newrelic_rpm"
 
+gem "jquery-rails"
+
 group :development do
   gem "heroku"
   gem "guard-spin"
