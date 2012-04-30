@@ -14,10 +14,6 @@ gem "fleakr"
 
 gem "newrelic_rpm"
 
-group :test do
-  gem "ZenTest"
-end
-
 group :development do
   gem "heroku"
   gem "passenger"

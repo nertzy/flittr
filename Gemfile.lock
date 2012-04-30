@@ -1,7 +1,6 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    ZenTest (4.4.2)
     actionmailer (3.2.1)
       actionpack (= 3.2.1)
       mail (~> 2.4.0)
@@ -143,7 +142,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ZenTest
   addressable
   dalli
   fleakr
