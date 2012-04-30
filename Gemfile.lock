@@ -51,6 +51,9 @@ GEM
       thor (~> 0.14.6)
     guard-rspec (0.7.0)
       guard (>= 0.10.0)
+    guard-spin (0.1.4)
+      guard
+      spin
     heroku (2.19.2)
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
@@ -120,6 +123,7 @@ GEM
       railties (>= 3.0)
       rspec (~> 2.9.0)
     rubyzip (0.9.5)
+    spin (0.4.5)
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -147,6 +151,7 @@ DEPENDENCIES
   fleakr
   grackle
   guard-rspec
+  guard-spin
   heroku
   newrelic_rpm
   passenger
