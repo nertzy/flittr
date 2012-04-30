@@ -1,5 +1,11 @@
-# A sample Guardfile
-# More info at https://github.com/guard/guard#readme
+guard 'bundler' do
+  watch('Gemfile')
+end
+
+guard 'rails', server: :thin, timeout: 5 do
+  watch('Gemfile.lock')
+  watch(%r{^(config|lib)/.*})
+end
 
 guard 'spin' do
   # --colour --fail-fast --format documentation --tag ~slow
@@ -18,6 +24,3 @@ guard 'spin' do
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
 end
 
-guard 'bundler' do
-  watch('Gemfile')
-end
