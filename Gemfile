@@ -17,7 +17,6 @@ gem "newrelic_rpm"
 group :development do
   gem "heroku"
   gem "passenger"
-  gem "guard-rspec"
   gem "guard-spin"
 end
 

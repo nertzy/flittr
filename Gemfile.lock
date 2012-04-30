@@ -49,8 +49,6 @@ GEM
     guard (1.0.1)
       ffi (>= 0.5.0)
       thor (~> 0.14.6)
-    guard-rspec (0.7.0)
-      guard (>= 0.10.0)
     guard-spin (0.1.4)
       guard
       spin
@@ -150,7 +148,6 @@ DEPENDENCIES
   dalli
   fleakr
   grackle
-  guard-rspec
   guard-spin
   heroku
   newrelic_rpm
