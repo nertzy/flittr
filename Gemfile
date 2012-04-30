@@ -18,6 +18,7 @@ group :development do
   gem "heroku"
   gem "passenger"
   gem "guard-spin"
+  gem "guard-bundler"
 end
 
 group :test, :development do
