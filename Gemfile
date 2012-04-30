@@ -16,7 +16,6 @@ gem "newrelic_rpm"
 
 group :development do
   gem "heroku"
-  gem "passenger"
   gem "guard-spin"
   gem "guard-bundler"
   gem "guard-rails"
