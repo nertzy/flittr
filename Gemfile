@@ -22,9 +22,11 @@ group :development do
   gem "guard-bundler"
   gem "guard-rails"
   gem "guard-livereload"
+  gem 'guard-jasmine'
   gem "rack-livereload"
 end
 
 group :test, :development do
   gem "rspec-rails"
+  gem "jasmine", git: "git://github.com/pivotal/jasmine-gem.git"
 end

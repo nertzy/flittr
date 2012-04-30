@@ -16,6 +16,12 @@ guard 'livereload' do
   watch(%r{(app|vendor)/assets/\w+/(.+\.(css|js|html)).*})  { |m| "/assets/#{m[2]}" }
 end
 
+guard :jasmine, server: :jasmine_gem, jasmine_url: 'http://localhost:8888/' do
+  watch(%r{spec/javascripts/spec\.(js\.coffee|js|coffee)$})         { "spec/javascripts" }
+  watch(%r{spec/javascripts/.+_spec\.(js\.coffee|js|coffee)$})
+  watch(%r{app/assets/javascripts/(.+?)\.(js\.coffee|js|coffee)$})  { |m| "spec/javascripts/#{m[1]}_spec.#{m[2]}" }
+end
+
 guard 'spin' do
   # --colour --fail-fast --format documentation --tag ~slow
   watch(%r{^spec/.+_spec\.rb$})
