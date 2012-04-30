@@ -21,7 +21,7 @@ end
 group :development do
   gem "heroku"
   gem "passenger"
-  gem "guard"
+  gem "guard-rspec"
 end
 
 group :test, :development do
