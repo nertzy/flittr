@@ -23,6 +23,7 @@ group :development do
   gem "guard-rails"
   gem "guard-livereload"
   gem 'guard-jasmine'
+  gem 'guard-jslint-on-rails'
   gem "rack-livereload"
 end
 

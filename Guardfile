@@ -16,6 +16,15 @@ guard 'livereload' do
   watch(%r{(app|vendor)/assets/\w+/(.+\.(css|js|html)).*})  { |m| "/assets/#{m[2]}" }
 end
 
+# verify that application Javascript files are lintable
+# see https://github.com/psionides/jslint_on_rails
+guard 'jslint-on-rails' do
+  # watch for changes to application javascript files
+  watch(%r{^app/assets/javascripts/.*\.js$})
+  # watch for changes to the JSLint configuration
+  watch('config/jslint.yml')
+end
+
 guard :jasmine, server: :jasmine_gem, jasmine_url: 'http://localhost:8888/' do
   watch(%r{spec/javascripts/spec\.(js\.coffee|js|coffee)$})         { "spec/javascripts" }
   watch(%r{spec/javascripts/.+_spec\.(js\.coffee|js|coffee)$})
@@ -38,3 +47,4 @@ guard 'spin' do
   # Capybara request specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
 end
+
