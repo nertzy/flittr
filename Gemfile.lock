@@ -32,12 +32,10 @@ GEM
     addressable (2.2.4)
     arel (3.0.2)
     builder (3.0.0)
-    daemon_controller (0.2.6)
     daemons (1.1.6)
     dalli (1.0.2)
     erubis (2.7.0)
     eventmachine (0.12.10)
-    fastthread (1.0.7)
     fleakr (0.7.1)
       hpricot (>= 0.6.164)
       loggable (>= 0.2.0)
@@ -66,11 +64,6 @@ GEM
     newrelic_rpm (3.3.4.1)
     nokogiri (1.4.4)
     oauth (0.4.4)
-    passenger (3.0.7)
-      daemon_controller (>= 0.2.5)
-      fastthread (>= 1.0.1)
-      rack
-      rake (>= 0.8.1)
     pg (0.12.2)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -130,7 +123,6 @@ DEPENDENCIES
   grackle
   heroku
   newrelic_rpm
-  passenger
   pg
   rails (~> 3.2.0)
   term_extraction (= 0.1.4)
