@@ -2,15 +2,17 @@
 
 <% content_for :body_style do -%>
   background-image: url(<%= @status.user.profile_background_image_url %>);
-  background-repeat: <%= @status.user.profile_background_tile ? 'repeat' : 'no-repeat' %>;
+  background-repeat: <%= @status.user.profile_background_tile? ? 'repeat' : 'no-repeat' %>;
   background-color: #<%= @status.user.profile_background_color %>;
 <% end -%>
 
 <%= render :partial => "statuses/status", :object => @status %>
 
 <% if Rails.env.development? -%>
-  <%= raw debug(@status.terms) %>
-  <%= raw debug(@status.photo) %>
-  <%= raw debug(@status.flickr_photo) %>
-  <%= raw debug(@status) %>
+  <pre>
+    <%= raw debug(@status.terms) %>
+    <%= raw debug(@status.photo) %>
+    <%= raw debug(@status.flickr_photo) %>
+    <%= raw debug(@status) %>
+  </pre>
 <% end -%>

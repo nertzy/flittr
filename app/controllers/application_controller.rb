@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 
-  rescue_from Grackle::TwitterError, :with => :twitter_error
   rescue_from User::NotAuthorized, :with => :not_authorized
 
   private

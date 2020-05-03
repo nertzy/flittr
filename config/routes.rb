@@ -1,4 +1,4 @@
-Flittr::Application.routes.draw do
+Rails.application.routes.draw do
   resources :users
   resources :statuses
   post "search", :to => "search#index"

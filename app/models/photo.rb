@@ -22,18 +22,17 @@ class Photo < ActiveRecord::Base
   validates_presence_of :twitter_status_id
   validates_presence_of :url, :allow_blank => false
   validates_uniqueness_of :twitter_status_id
-  
-  def fleakr=(fleakr_photo)
-    fleakr_photo = fleakr_photo.dup
-    self.flickr_id     = fleakr_photo.id
-    self.title         = fleakr_photo.title
-    self.description   = fleakr_photo.description
-    self.url           = fleakr_photo.small.page.sub('/sizes/s/', '/')
-    self.medium_url    = fleakr_photo.medium.url
-    self.small_url     = fleakr_photo.small.url
-    self.square_url    = fleakr_photo.square.url
-    self.thumbnail_url = fleakr_photo.thumbnail.url
-    fleakr_photo
+
+  def flickr=(flickr_photo)
+    self.flickr_id     = flickr_photo["id"]
+    self.title         = flickr_photo["title"]
+    self.description   = flickr_photo["description"]
+    self.url           = "https://www.flickr.com/photos/#{flickr_photo["owner"]}/#{flickr_photo["id"]}/"
+    self.medium_url    = flickr_photo["url_m"]
+    self.small_url     = flickr_photo["url_s"]
+    self.square_url    = flickr_photo["url_sq"]
+    self.thumbnail_url = flickr_photo["url_t"]
+    flickr_photo
   end
 
 end
