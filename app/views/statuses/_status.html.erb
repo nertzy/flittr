@@ -12,14 +12,14 @@
       </a>
     </div>
     <div class="content">
-      <div class="text"><%= raw simple_format(status.text) %></div>
+      <div class="text"><%= raw simple_format(status.full_text) %></div>
       <p class="metadata">
         <%= link_to "#{time_ago_in_words(status.created_at)} ago", "http://twitter.com/#{u(status.user.formatted_screen_name)}/status/#{status.id}" %>
         <% if status.source -%>
           from <%= raw status.source %>
         <% end %>
-        <% if status.in_reply_to_status_id %>
-          <%= link_to "in reply to #{status.in_reply_to_screen_name}", status_path(status.in_reply_to_status_id) %> 
+        <% if status.reply? %>
+          <%= link_to "in reply to #{status.in_reply_to_screen_name}", status_path(id: status.in_reply_to_status_id) %>
         <% end %>
       </p>
     </div>
@@ -29,10 +29,10 @@
         <%= link_to image_tag(status.photo.medium_url), status.photo.url %>
       </div>
     <% end -%>
-  
+
     <div class="permalink">
-      <%= link_to 'permalink', status_path(:id => status.id) %>
+      <%= link_to 'permalink', status_path(status.id) %>
     </div>
-  
+
   </div>
 <% end -%>

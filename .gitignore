@@ -10,3 +10,4 @@ config/initializers/yahoo.rb
 db/*.sqlite3
 bin/*
 public/statuses/*
+.envrc
