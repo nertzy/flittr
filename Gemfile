@@ -13,6 +13,6 @@ gem "term_extraction", "0.1.4"
 gem "twitter"
 
 group :development do
-  gem "byebug"
+  gem "debug"
   gem "listen"
 end
