@@ -8,6 +8,5 @@ config/database.yml
 config/initializers/fleakr.rb
 config/initializers/yahoo.rb
 db/*.sqlite3
-bin/*
 public/statuses/*
 .envrc
